@@ -1,0 +1,145 @@
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git init
+Initialized empty Git repository in C:/Users/HP/Desktop/Software engineering Github/.git/
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git add .
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "first commit"
+[master (root-commit) 5c6e6b7] first commit
+ 3 files changed, 187 insertions(+)
+ create mode 100644 1.1 Getting Started - About Version Control.txt
+ create mode 100644 3.1 Branching - Branches in a Nutshell.txt
+ create mode 100644 5.1 Distributed Git - Distributed Workflows.txt
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git remote add origin https://github.com/DanaAlaaEleen/D-project.git
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git rm '3.1 Branching - Branches in a Nutshell.txt'
+rm '3.1 Branching - Branches in a Nutshell.txt'
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "Deleting the file"
+[master ad1c109] Deleting the file
+ 1 file changed, 100 deletions(-)
+ delete mode 100644 3.1 Branching - Branches in a Nutshell.txt
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git log
+commit ad1c109ca100abea78aef6162b3e866d59c227e2 (HEAD -> master)
+Author: DanaAlaaEldeen <Danaalaa2731997@gmail.com>
+Date:   Mon Feb 12 13:07:29 2018 +0200
+
+    Deleting the file
+
+commit 5c6e6b79cc81423b521e5c97951616204d64d738
+Author: DanaAlaaEldeen <Danaalaa2731997@gmail.com>
+Date:   Mon Feb 12 13:05:54 2018 +0200
+
+    first commit
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   3.1 Branching - Branches in a Nutshell.txt
+
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "Re-adding the File"
+[master cc0ce3a] Re-adding the File
+ 1 file changed, 100 insertions(+)
+ create mode 100644 3.1 Branching - Branches in a Nutshell.txt
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git push -u origin master
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 8.27 KiB | 770.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/DanaAlaaEleen/D-project.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ touch README.md
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "Creatind README.md file"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git branch ReadMe
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "Creating branch ReadMe"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (ReadMe)
+$ git commit -m "Making ReadMe the current branch"
+On branch ReadMe
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (ReadMe)
+$ git add README.md
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (ReadMe)
+$ git commit -m "Adding README.md file in ReadMe branch"
+[ReadMe 20cbc49] Adding README.md file in ReadMe branch
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git merge ReadMe
+Updating cc0ce3a..20cbc49
+Fast-forward
+ README.md | 4 ++++
+ 1 file changed, 4 insertions(+)
+ create mode 100644 README.md
+
+HP@user MINGW64 ~/Desktop/Software engineering Github (master)
+$ git commit -m "Merging ReadMe branch with the master branch"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
